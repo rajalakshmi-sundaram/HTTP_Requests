@@ -1,0 +1,9 @@
+Below are the steps we need to follow for sending Java HTTP requests using HttpURLConnection class.
+
+Create URL object from the GET/POST URL String.
+Call openConnection() method on URL object that returns instance of HttpURLConnection
+Set the request method in HttpURLConnection instance, default value is GET.
+Call setRequestProperty() method on HttpURLConnection instance to set request header values, such as “User-Agent” and “Accept-Language” etc.
+We can call getResponseCode() to get the response HTTP code. This way we know if the request was processed successfully or there was any HTTP error message thrown.
+For GET, we can simply use Reader and InputStream to read the response and process it accordingly.
+For POST, before we read response we need to get the OutputStream from HttpURLConnection instance and write POST parameters into it.
